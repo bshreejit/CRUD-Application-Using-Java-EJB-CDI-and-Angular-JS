@@ -1,0 +1,11 @@
+<html>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script type="text/javascript" src= CustomFilter.js></script>
+    <body ng-app="app" ng-controller = "CustomFilterController">
+            <input ng-model="greeting" type="text"><br>
+            No filter: {{greeting}}  <br>
+            Reverse: {{greeting|reverse}}<br>
+            Reverse + uppercase: {{greeting|reverse : true}}<br>
+            Reverse, filtered in controller: {{filteredGreeting}}<br>
+    </body>
+</html>

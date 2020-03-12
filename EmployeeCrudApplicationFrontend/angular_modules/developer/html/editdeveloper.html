@@ -1,0 +1,120 @@
+{{editemployeedata}}
+<input type="text" value="{{editemployeedata.details.fname}}">   
+             
+<!-- Form -->
+<form name="editForm" class="css-form" novalidate>
+        <div class="employee-class">
+                <!-- Employee Details -->
+                <div class="form-group">
+                    <hr>
+                    <label for="fname">First Name</label>
+                    <input type="text" class="form-control" value={{editemployeedata.details.fname}} ng-model="employee.details.fname" name="fname" placeholder="Enter first name" required="">
+                    <div ng-show="editForm.fname.$submitted || editForm.fname.$touched"></div>
+                    <div ng-show="editForm.fname.$error.validate">First name is required.</div>
+                </div>
+            
+                <div class="form-group">
+                    <label for="mname">Middle Name</label>
+                    <input type="text" class="form-control" ng-model="employee.details.mname" name="mname" value ="{{editemployeedata.details.mname}}" placeholder="Enter middle name">
+                </div>
+
+                <div class="form-group">
+                        <label for="lname">Last Name</label>
+                        <input type="text" class="form-control"  ng-model="employee.details.lname" name="lname" value ="{{editemployeedata.details.lname}}" placeholder="Enter last name" required="">
+                        <div ng-show="editForm.lname.$submitted || editForm.lname.$touched">
+                                <div ng-show = "editForm.lname.$error.validate">Last name is required.</div>
+                        </div>
+                </div>
+
+                <div class="form-group">
+                        <label for="email">Email</label> 
+                        <input type="email" class="form-control" ng-model="employee.details.email" value ="{{editemployeedata.details.email}}"
+                                    aria-describedby="emailHelp" name="email" placeholder="Enter the email address" required="">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        <div ng-show="applicationForm.email.$submitted || editForm.email.$touched">
+                            <div ng-show= applicationForm.email.$error.invalid>Email is required</div>
+                        </div>
+                </div>
+
+                <!-- Address -->
+                <div>
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" class="form-control"  ng-model="employee.address.city" name="city" value ="{{editemployeedata.address.city}}" placeholder="Enter your current city" required="">
+                        <div ng-show="editForm.city.$submitted || editForm.city.$touched">
+                                <div ng-show = "editForm.city.$error.validate">City is required.</div>
+                            </div>
+                    </div>  
+                    <div class="form-group">
+                        <label for="province">Province</label>
+                        <input type="text" class="form-control" ng-model="employee.address.province" name="province" value ="{{editemployeedata.address.province}}" placeholder="Enter province number" required="">
+                        <div ng-show="editForm.province.$submitted || editForm.province.$touched">
+                                <div ng-show = "editForm.province.$error.validate">Province number is required.</div>
+                            </div>
+                    </div>  
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <input type="text" class="form-control" ng-model="employee.address.country" name="country" value ="{{editemployeedata.address.country}}" placeholder="Enter your country name" required="">
+                        <div ng-show="editForm.country.$submitted || editForm.country.$touched">
+                                <div ng-show = "editForm.country.$error.validate">Country name is required.</div>
+                            </div>
+                    </div>  
+
+                </div>
+
+                <!-- Phone 1-->
+                <div>
+                    <div class="form-group">
+                        <label for="number">Number</label>
+                        <input type="tel" class="form-control" ng-model="employee.phone.number" value ="{{editemployeedata.phone.number[0]}}"
+                                name="number1" ng-minlength="10" ng-maxlength="13" placeholder="PHONE 1" required="">
+                        <div ng-show="editForm.number.$submitted || editForm.number.$touched">
+                                <div ng-show = "editForm.numberq.$error.validate">At least one number is required.</div>
+                        </div>
+                    </div>  
+                    <div class="form-group">
+                        <label for="phonetype">Phone Type1</label>
+                        <input type="text" class="form-control" ng-model="employee.phone.type" value ="{{editemployeedata.phone.type[0]}}"
+                                name="phonetype" placeholder="Enter your phone number type">
+                    </div>  
+                </div>
+                
+                <!-- Phone 2-->
+                <div>
+                        <div class="form-group">
+                            <label for="number">Number</label>
+                            <input type="tel" class="form-control" ng-model="employee.phone.number" value ="{{editemployeedata.phone.number[1]}}"
+                                name="number2" ng-minlength="10" ng-maxlength="13" placeholder="PHONE 2">
+                        </div>  
+                        <div class="form-group">
+                            <label for="phonetype">Phone Type2</label>
+                            <input type="text" class="form-control"  ng-model="employee.phone.type" value ="{{editemployeedata.phone.type[1]}}"
+                                        name="phonetype" placeholder="Enter your phone number type">
+                        </div>  
+                    </div>
+
+                <!-- Department -->
+                <div class="form-group">
+                                <label for="department">Department</label>
+                                <select type="text" class="form-control"  ng-model="employee.department.name" 
+                                    name="department" placeholder="Select employee department" ng-required="true"> 
+                                        <option value="IBD">IBD</option> 
+                                        <option value="FE" >FE</option> 
+                                        <option value="QA">QA</option> 
+                                </select>
+                                <div ng-show="employeeForm.department.$submitted || employeeForm.department.$touched">
+                                        <div ng-show = "employeeForm.department.$error.required">Department is required.</div>
+                                </div>                
+                </div>  
+        </div>
+      
+        <input type="submit" class="btn btn-info" ng-disabled="editForm.employee.$dirty && editForm.employee.$invalid"
+              ng-show="submit" ng-click="updateEmployee(employee)"  data-dismiss="modal" value="Submit" />
+        <input type="button" class="btn btn-info" ng-click="reset()" value="Reset" />
+</form>                  
+              
+    <div class="footer">
+            <tt>Confirm  the details entered!!</tt>
+    </div>            
+         
+              

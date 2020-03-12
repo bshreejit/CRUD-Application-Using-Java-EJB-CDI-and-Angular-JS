@@ -1,0 +1,11 @@
+com/f1soft/crud/resource/ApiAccessResource.class
+com/f1soft/crud/resource/ManagerResource.class
+com/f1soft/crud/exceptionmappers/NotFoundExceptionMapper.class
+com/f1soft/crud/filters/CorsFilter.class
+com/f1soft/crud/resource/DeveloperResource.class
+com/f1soft/crud/resource/ApplicationConfig.class
+com/f1soft/crud/filters/ResourceAccessFilter.class
+com/f1soft/crud/resource/UserAuthentication.class
+com/f1soft/crud/resource/GenericResource.class
+com/f1soft/crud/resource/UserLoginResource.class
+com/f1soft/crud/exceptionmappers/GeneralExceptionMappers.class

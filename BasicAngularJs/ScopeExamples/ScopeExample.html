@@ -1,0 +1,18 @@
+<html ng-app = "app">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script type="text/javascript" src= ScopeController.js></script>
+    <body>
+            <div>
+                    <div ng-controller="GreetController">
+                      Hello {{name}}!
+                    </div>
+                    <div ng-controller="ListController">
+                      <ol>
+                        <li ng-repeat="name in names">
+                            {{name}} from {{department}}
+                        </li>
+                      </ol>
+                    </div>
+            </div>
+    </body>
+</html>

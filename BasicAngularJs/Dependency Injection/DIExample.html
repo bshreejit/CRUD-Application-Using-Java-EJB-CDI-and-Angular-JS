@@ -1,0 +1,12 @@
+<!-- Strict Dependency -->
+<!-- ng-strict-di throws an error whenever a service try to use the implicit annotation for DI -->
+
+<html ng-app = "app" ng-strict-di>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script type="text/javascript" src= "DiExample.js"></script>
+    <body>
+        <div ng-controller="LeafController">
+                <tt>Desciption: </tt> {{display}} 
+        </div>
+    </body>
+</html>

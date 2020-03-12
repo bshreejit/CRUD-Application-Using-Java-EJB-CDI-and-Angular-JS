@@ -1,0 +1,132 @@
+<!-- Manager Form-->
+<hr>
+<div>
+       <input type="button" class="btn btn-outline-info active" ui-sref="manager" 
+       value = "Back" style="float: right;" aria-pressed="true"/>
+</div>
+<form name="managerForm" class="css-form" ng-controller="ManagerPostController" novalidate>
+
+        <!-- Manager -->
+        <div class="form-group">
+                        <label for="manager_id">Manager Id</label>
+                        <input type="text" class="form-control" id="manager_id" ng.model="manager.manager_id" name="manager_id" placeholder="Enter manager id" ng-required = "true">
+                          <div ng-show="managerForm.manager_id.$submitted || managerForm.manager_id.$touched">
+                              <div ng-show="managerForm.manager_id.$error.required">Manager id is required.</div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="managing_team">managing Team</label>
+                          <input type="text" class="form-control" id="managing_team" ng-model="manager.managing_team" name="managing_team" placeholder="Enter managing team name" ng-required = "true">
+                            <div ng-show="managerForm.managing_team.$submitted || managerForm.managing_team.$touched">
+                                <div ng-show="managerForm.managing_team.$error.required">Managing team name is required.</div>
+                            </div>
+                </div>
+        <!-- Manager Details -->
+         <div class="form-group">
+                <hr>
+                <label for="fname">First Name</label>
+                <input type="text" class="form-control" ng-model="manager.details.fname" name="fname" placeholder="Enter first name" ng-required="true">
+                <div ng-show="managerForm.fname.$submitted || managerForm.fname.$touched"></div>
+                <div ng-show="managerForm.fname.$error.required">First name is required.</div>
+            </div> 
+
+            <div class="form-group">
+                <label for="mname">Middle Name</label>
+                <input type="text" class="form-control" ng-model="manager.details.mname" name="mname" placeholder="Enter middle name" >
+            </div>
+
+            <div class="form-group">
+                    <label for="lname">Last Name</label>
+                    <input type="text" class="form-control" ng-model="manager.details.lname" name="lname" placeholder="Enter last name" ng-required="true">
+                    <div ng-show="managerForm.lname.$submitted || managerForm.lname.$touched">
+                            <div ng-show = "managerForm.lname.$error.required">Last name is required.</div>
+                    </div>
+            </div>
+
+            <div class="form-group">
+                    <label for="email">Email</label> 
+                    <input type="text" class="form-control"  ng-model="manager.details.email"
+                                aria-describedby="emailHelp" name="email" placeholder="Enter the email address" ng-required="true">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <div ng-show="applicationForm.email.$submitted || managerForm.email.$touched">
+                        <div ng-show= applicationForm.email.$error.required>Email is required</div>
+                    </div>
+            </div>
+
+            <!-- Address -->
+            <div>
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" class="form-control" ng-model="manager.address.city" name="city" placeholder="Enter your current city" ng-required="true">
+                    <div ng-show="managerForm.city.$submitted || managerForm.city.$touched">
+                            <div ng-show = "managerForm.city.$error.required">City is required.</div>
+                        </div>
+                </div>  
+                <div class="form-group">
+                    <label for="province">Province</label>
+                    <input type="number" class="form-control"  ng-model="manager.address.province" name="province" placeholder="Enter province number" ng-required="true">
+                    <div ng-show="managerForm.province.$submitted || managerForm.province.$touched">
+                            <div ng-show = "managerForm.province.$error.required">Province number is required.</div>
+                        </div>
+                </div>  
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <input type="text" class="form-control" ng-model="manager.address.country" name="country" placeholder="Enter your country name" ng-required="true">
+                    <div ng-show="managerForm.country.$submitted || managerForm.country.$touched">
+                            <div ng-show = "managerForm.country.$error.required">Country name is required.</div>
+                        </div>
+                </div>  
+
+            </div>
+
+            <!-- Multiple Phone Numbers -->
+            <div>
+                    <label> Phone Number & Type </label>
+                    <div class="form-group">
+                            <div ng-repeat = "phonenumber in phonenumbers track by $index">
+                                    <tt>Number</tt>
+                                    <input type="tel" class="form-control" ng-model="manager.phone.number[$index]" 
+                                            name="number" ng-minlength="13" ng-maxlength="20" placeholder="PHONE {{$index+1}} " ng-required="true">
+                                            <div ng-show="managerForm.number.$submitted || managerForm.number.$touched">
+                                                    <div ng-show = "managerForm.number.$error.minlength">Phone number must be of minimum 13 numbers!</div>
+                                                    <div ng-show = "managerForm.number.$error.maxlength">Phone number must be of maximum 20 numbers!</div>  
+                                            </div> 
+                                    <tt>Type</tt>
+                                    <input type="text" class="form-control" ng-model="manager.phone.type[$index]" 
+                                            name="phonetype" placeholder="TYPE OF PHONE {{$index + 1}}"> 
+                                    <br>
+                            </div>
+                            
+                            <button class = "btn-sm" ng-click=addPhone()>Add Numbers</button>         
+                    </div>
+            </div>
+
+            
+            <div class="form-group">
+                    <label for="department">Department</label>
+                    <select type="text" class="form-control"  ng-model="manager.department.name" 
+                        name="department" placeholder="Select manager department" ng-required="true"> 
+                            <option value="IBD">IBD</option> 
+                            <option value="FE" >FE</option> 
+                            <option value="QA">QA</option> 
+                    </select>
+                    <div ng-show="managerForm.department.$submitted || managerForm.department.$touched">
+                            <div ng-show = "managerForm.department.$error.required">Department is required.</div>
+                    </div>
+            </div>
+
+            
+    <input type="submit" class="btn btn-info" ng-disabled="managerForm.manager.$dirty && managerForm.manager.$invalid"
+           ng-click="createManager(manager)" ui-sref="manager" value="Submit" />
+    <input type="button" class="btn btn-info float-right" ng-click="reset()" value="Reset" />
+    <hr>
+</form>
+
+
+
+
+
+
+
+                              
+                         

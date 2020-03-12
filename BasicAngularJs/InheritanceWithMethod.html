@@ -1,0 +1,19 @@
+<html>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script type="text/javascript" src= InheritanceWithMethod.js></script>
+    <body ng-app = "app">
+        <div ng-controller = "MainController">
+                <button ng-click="callfunction()">MainController</button>
+                <h1>{{var}}</h1>
+            <div ng-controller = "SubController">
+                    <button ng-click="callfunction()">SubController</button>
+                    <h2>{{var}}</h2>
+                <div ng-controller = "ChildController">
+                        <button ng-click="callfunction()">ChildController</button>
+                        <h3>{{var}}</h3>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

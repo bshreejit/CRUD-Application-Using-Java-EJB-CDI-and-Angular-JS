@@ -1,0 +1,38 @@
+<html >
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script type = "text/javascript" src="SimpleForm.js"></script>
+    <body>
+            <div ng-app="app" ng-controller="FormController">
+                    <form name= "form" novalidate class="css-form" >
+
+                        <!-- $error >  failed validators are stored in a key in $error -->
+                        <label>Name: <input type="text" ng-model="user.name" name="user" required=""/></label><br />
+                        <div ng-show="form.user.$submitted || form.user.$touched">
+                            <div ng-show="form.user.$error.required"> Please Enter the name!!!!</div>
+                        </div> 
+
+                        <!-- Own custom validation ------ "username" -->
+                        <!-- ngModelCOntroller.$pending   >  key where async validators are stored -->
+
+                        <!-- <label>Username: <input type="text" ng-model="user.username" name="uname" username/></label><br />
+                        <span ng-show="form.uname.$pending.username">Checking if the username is available... ... </span> 
+                        <span ng-show="form.uname.$error.username" >Choose anothor username. The user already exists!!</span> -->
+
+                        <label>E-mail: <input type="email" ng-model="user.email" name="email" required=""/></label><br />
+                         <div ng-show="form.email.$submitted || form.email.$touched">
+                            <div ng-show="form.email.$error.required"> Please enter the email address!!!!</div>
+                    </div> 
+                      
+                      <label>Best Editor:</label>   
+                      <label><input type="radio" ng-model="user.preference" value="BCS" required=""/>BCS</label>
+                      <label><input type="radio" ng-model="user.preference" value="BCT" />BCT</label><br />
+
+                      <input type="button" ng-click="reset()" value="Reset" />
+                      <input type="submit" ng-disabled="form.user.$dirty && form.user.$invalid"
+                                        ng-click="update(user)" value="Save" />
+                    </form>
+                    <pre>user = {{user | json}}</pre>
+                    <pre>master = {{master | json}}</pre>
+            </div>
+    </body>
+</html>

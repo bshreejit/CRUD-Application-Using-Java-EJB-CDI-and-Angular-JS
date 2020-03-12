@@ -1,0 +1,18 @@
+<html>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script type="text/javascript" src= FilterExample.js></script>
+    <body ng-app="app">
+        <div ng-component= "FilterController">
+            <tt>Enter the price:</tt> <input ng-model="price">
+            <tt>{{price | currency}}</tt><br>
+            <!-- Filters one at a time -->
+            <div ng-repeat= "name in names | filter: 'a'">
+                <tt>{{name | uppercase}}</tt>
+            </div>
+            <!-- Custom filter implementation -->
+            <input type="text" ng-model="inputString"/><br>
+            <tt>Old String </tt>{{inputString}}<br>
+            <tt>New String </tt>{{inputString | CustomFilter}}<br>
+        </div>
+    </body>
+</html>

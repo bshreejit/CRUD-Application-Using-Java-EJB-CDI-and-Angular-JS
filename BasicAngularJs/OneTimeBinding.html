@@ -1,0 +1,13 @@
+<html>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script type="text/javascript" src= OneTimeBinding.js></script>
+    <body ng-app="app">
+        <div ng-controller = "OneTimeBindingController">
+            <button ng-click=onClick($event)> 
+                Click
+            </button><br>
+            <tt>One Time Binding </tt>  {{:: name}} <br>
+            <tt>Normal Binding </tt> {{name}}
+        </div>
+    </body>
+</html>

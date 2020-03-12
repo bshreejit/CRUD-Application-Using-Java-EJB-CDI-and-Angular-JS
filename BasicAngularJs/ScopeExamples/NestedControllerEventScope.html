@@ -1,0 +1,20 @@
+<html ng-app = "app">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script type="text/javascript" src= "NestedControllerEventScope.js"></script>
+    <body>
+        <div ng-controller = "MainController">
+            <button ng-click="OnClick($event)">Broadcast Event</button><br>
+            <tt> Message </tt>: {{hello}}{{message}}
+            <div ng-controller="MiddleController"> 
+                <button ng-click="OnBroadCastClick($event)">Broadcast Event</button>
+                <button ng-click="OnEmitClick($event)">Emit Event</button>
+                <br>
+                <tt> Message </tt>: {{hello}}{{message}}
+                <div ng-controller = "LeafController">
+                    <button ng-click="OnClick($event)">Emit Event</button><br>
+                    <tt> Message </tt>: {{hello}}{{message}}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

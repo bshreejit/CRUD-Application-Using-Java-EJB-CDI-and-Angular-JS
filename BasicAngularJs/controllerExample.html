@@ -1,0 +1,13 @@
+<html>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script type="text/javascript" src= controller.js></script>
+    <body ng-app="app">
+        <div ng-controller="VehicleController">
+            <input ng-model = "yourVehicle">
+            <button ng-click="customVehicle('car')">Car</button>
+            <!-- <button ng-click="bike()">Bike</button> -->
+            <button ng-click="customVehicle(yourVehicle)">Custom Vehicle</button>
+            <h1>You choose {{vehicle}} as your ride!!!</h1>
+        </div>
+    </body>
+</html>

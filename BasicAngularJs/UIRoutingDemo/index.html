@@ -1,0 +1,15 @@
+<html>
+        <script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/angular-ui-router@1.0.18/release/ui-router-angularjs.js" ></script>
+        <script type ="text/javascript" src="app.js"></script>
+        <body ng-app="app">
+                <ul>
+                    <li><a ui-sref="home">Home</a></li>
+                    <li><a ui-sref="about">About</a></li>
+                </ul>
+                <div class="container">
+                        <!-- Place to inject our content -->
+                        <ui-view></ui-view>
+                </div>
+            </body>
+</html>

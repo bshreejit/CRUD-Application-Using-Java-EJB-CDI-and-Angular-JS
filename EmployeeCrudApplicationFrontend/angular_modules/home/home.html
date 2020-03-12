@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-lg-12 text-center">
+        <h1 class="mt-5">Employee Basic CRUD Application</h1>
+            <p class="lead">----------------------------------</p>
+            <ul class="list-unstyled">
+                <div class="row">
+                        <div class="col-lg-4 bg-black"  style = "border-radius: 25px;
+                            padding: 20px; width: 200px; height: 150px;">
+                            <tt>DEVELOPER COUNT</tt>
+                            <div style="text-align:center;">
+                                0
+                            </div>
+                        </div>
+                        <div class="col-lg-4 bg-dark" style = "border-radius: 25px;
+                            padding: 20px; width: 200px; height: 150px;">
+                            
+                            <ul>
+                                <li>
+                                    <a class="nav-link" ui-sref="main.home.details" ui-sref-active="activeState">Details</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" ui-sref="main.home.qualifications" ui-sref-active="activeState">Qualifications</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <div class="col-lg-4 " style = "border-radius: 25px;
+                            padding: 20px; width: 200px; height: 150px;">
+                                <ui-view></ui-view>
+                        </div>
+                </div>
+            </ul>
+    
+        <!-- Some additional Content Using directive -->
+        <home-content></home-content>
+    </div>
+</div>

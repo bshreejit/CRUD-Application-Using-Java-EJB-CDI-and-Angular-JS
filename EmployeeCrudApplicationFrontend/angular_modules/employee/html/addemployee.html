@@ -1,0 +1,110 @@
+<!--Add  Employee -->
+
+<div>
+        <input type="button" class="btn btn-outline-info active" ui-sref="employee" 
+                         value = "Back" style="float: right;" aria-pressed="true"/>
+</div>
+
+<form name="employeeForm" ng-controller="EmployeePostController" class="css-form" novalidate>
+        <!-- Employee Details -->
+                <div class="form-group">
+                    <hr>
+                    <label for="fname">First Name</label>
+                    <input type="text" class="form-control" ng-model="employee.details.fname" name="fname" placeholder="Enter first name" ng-required="true">
+                    <div ng-show="employeeForm.fname.$submitted || employeeForm.fname.$touched">
+                        <div ng-show="employeeForm.fname.$error.required">First name is required.</div>
+                    </div>
+                </div> 
+    
+                <div class="form-group">
+                    <label for="mname">Middle Name</label>
+                    <input type="text" class="form-control" ng-model="employee.details.mname" name="mname" placeholder="Enter middle name" >
+                </div>
+    
+                <div class="form-group">
+                        <label for="lname">Last Name</label>
+                        <input type="text" class="form-control" ng-model="employee.details.lname" name="lname" placeholder="Enter last name" ng-required="true">
+                        <div ng-show="employeeForm.lname.$submitted || employeeForm.lname.$touched">
+                                <div ng-show = "employeeForm.lname.$error.required">Last name is required.</div>
+                        </div>
+                </div>
+    
+                <div class="form-group">
+                        <label for="email">Email</label> 
+                        <input type="text" class="form-control"  ng-model="employee.details.email"
+                                    aria-describedby="emailHelp" name="email" placeholder="Enter the email address" ng-required="true">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        <div ng-show="employeeForm.email.$submitted || employeeForm.email.$touched">
+                            <div ng-show= employeeForm.email.$error.required>Email is required</div>
+                        </div>
+                </div>
+    
+                <!-- Address -->
+                <div>
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" class="form-control" ng-model="employee.address.city" name="city" placeholder="Enter your current city" ng-required="true">
+                        <div ng-show="employeeForm.city.$submitted || employeeForm.city.$touched">
+                                <div ng-show = "employeeForm.city.$error.required">City is required.</div>
+                            </div>
+                    </div>  
+                    <div class="form-group">
+                        <label for="province">Province</label>
+                        <input type="number" class="form-control"  ng-model="employee.address.province" name="province" placeholder="Enter province number" ng-required="true">
+                        <div ng-show="employeeForm.province.$submitted || employeeForm.province.$touched">
+                                <div ng-show = "employeeForm.province.$error.required">Province number is required.</div>
+                            </div>
+                    </div>  
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <input type="text" class="form-control" ng-model="employee.address.country" name="country" placeholder="Enter your country name" ng-required="true">
+                        <div ng-show="employeeForm.country.$submitted || employeeForm.country.$touched">
+                                <div ng-show = "employeeForm.country.$error.required">Phone name is required.</div>
+                            </div>
+                    </div>  
+    
+                </div>
+    
+                <!-- Multiple Phone Numbers -->
+                <div>
+                        <label> Phone Number & Type </label>
+                        <div class="form-group">
+                                <div ng-repeat = "phonenumber in phonenumbers track by $index">
+                                        <tt>Number</tt>
+                                        <input type="tel" class="form-control" ng-model="employee.phone.number[$index]" 
+                                                name="number" ng-minlength="13" ng-maxlength="20" placeholder="PHONE {{$index+1}} " ng-required="true">
+                                                <div ng-show="employeeForm.number.$submitted || employeeForm.number.$touched">
+                                                        <div ng-show = "employeeForm.number.$error.minlength">Phone number must be of minimum 13 numbers!</div>
+                                                        <div ng-show = "employeeForm.number.$error.maxlength">Phone number must be of maximum 20 numbers!</div>  
+                                                </div> 
+                                        <tt>Type</tt>
+                                        <input type="text" class="form-control" ng-model="employee.phone.type[$index]" 
+                                                name="phonetype" placeholder="TYPE OF PHONE {{$index + 1}}"> 
+                                        <br>
+                                </div>
+                                
+                                <button class = "btn-sm" ng-click=addPhone()>Add Numbers</button>         
+                        </div>
+                </div>
+        
+                
+                <div class="form-group">
+                        <label for="department">Department</label>
+                        <select type="text" class="form-control"  ng-model="employee.department.name" 
+                            name="department" placeholder="Select employee department" ng-required="true"> 
+                                <option value="IBD">IBD</option> 
+                                <option value="FE" >FE</option> 
+                                <option value="QA">QA</option> 
+                        </select>
+                        <div ng-show="employeeForm.department.$submitted || employeeForm.department.$touched">
+                                <div ng-show = "employeeForm.department.$error.required">Department is required.</div>
+                        </div>
+                </div>
+        <div>
+                        <input type="checkbox" ng-model="checked" aria-label="Toggle ngShow"><br />
+                        <input type="submit" class="btn btn-info check-element animate-show-hide" ng-disabled="employeeForm.employee.$dirty && employeeForm.employee.$invalid" 
+                                ng-show="checked" ng-click="createEmployee(employee)" ui-sref="employee" value="Submit"/>
+                        <input type="button" class="btn btn-info float-right" ng-click="reset()" value="Reset" />                        
+        </div>
+        <hr/>
+</form>

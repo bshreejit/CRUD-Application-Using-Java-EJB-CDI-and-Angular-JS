@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script type="text/javascript" src= inheritance.js></script>
+        <div ng-app ="app">
+            <div ng-controller="MainController">
+                Good {{greeting.var}} !!!
+                <div ng-controller = "SubController">
+                        Good {{greeting.var}} !!! 
+                    <div ng-controller="ChildController">
+                        Good {{greeting.var}} !!!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

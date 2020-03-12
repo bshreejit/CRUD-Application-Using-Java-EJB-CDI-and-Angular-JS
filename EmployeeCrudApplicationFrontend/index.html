@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+    <head>
+
+        <!-- Required meta tags -->
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="description" content="">
+            <meta name="author" content="">   
+        <!-- Bootstrap CSS -->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+            <link rel = "stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+            <link rel = "stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+                
+        <title>CRUD APPLICATION</title>
+        
+    </head>     
+
+    <body class="container-fluid " ui-view> 
+        
+    </body>
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script type = "text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.23/angular-ui-router.js"></script>
+    
+    <!-- App Module -->
+    <script type="text/javascript" src= "app.module.js"></script>
+
+    <!-- Employee -->
+    <script type="text/javascript" src= "./angular_modules/employee/employee.ui-routing.module.js"></script>
+    <script type = "text/javascript" src="./angular_modules/employee/employee.controller.js"></script>
+    <script type= "text/javascript" src="./angular_modules/employee/post.employee.controller.js"></script>
+    <script type = "text/javascript" src="./angular_modules/employee/edit.employee.controller.js"></script>
+    <script type="text/javascript" src="./angular_modules/employee/httpget.service.js"></script>
+    <script type="text/javascript" src="./angular_modules/employee/httpgetbyid.service.js"></script>
+    <script type="text/javascript" src="./angular_modules/employee/httppost.service.js"></script>
+
+    <!-- Developer -->
+    <script type="text/javascript" src= "./angular_modules/developer/developer.ui-routing.module.js"></script>
+    <script type = "text/javascript" src="./angular_modules/developer/developer.controller.js"></script>
+    <script type= "text/javascript" src="./angular_modules/developer/post.developer.controller.js"></script>
+    <script type = "text/javascript" src="./angular_modules/developer/http.getalldeveloper.service.js"></script>
+    
+    <!-- Manager -->
+    <script type="text/javascript" src= "./angular_modules/manager/manager.ui-routing.module.js"></script>
+    <script type = "text/javascript" src="./angular_modules/manager/manager.controller.js"></script>
+    <script type= "text/javascript" src="./angular_modules/manager/post.manager.controller.js"></script>
+    <script type = "text/javascript" src="./angular_modules/manager/http.getallmanager.service.js"></script>
+    
+     <!-- Login -->
+     <script type="text/javascript" src= "./angular_modules/login/login.module.js"></script>
+     <script type = "text/javascript" src="./angular_modules/login/login.controller.js"></script>
+     
+     <!-- Register -->
+     <script type= "text/javascript" src="./angular_modules/register/register.module.js"></script>
+     <script type = "text/javascript" src="./angular_modules/register/register.controller.js"></script>
+     
+    <!-- Home -->
+    <script type="text/javascript" src= "./angular_modules/home/home.module.js"></script>
+    <script type = "text/javascript" src="./angular_modules/home/home.controller.js"></script>
+    
+    <!-- Navigation -->
+    <script type= "text/javascript" src="./angular_modules/navigation/navigation.module.js"></script>
+    <script type = "text/javascript" src="./angular_modules/navigation/navigation.controller.js"></script>
+    
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+                                        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+</html>

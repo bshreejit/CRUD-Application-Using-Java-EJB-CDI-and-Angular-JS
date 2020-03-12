@@ -1,0 +1,90 @@
+<div ng-controller="DeveloperController">
+    <input type="number" placeholder="Search Developer by Id" ng-model="searchId" />
+    <input type="button" value="Search" ng-click="search(searchId)" />
+    <input type="button" class="btn btn-success float-right" ui-sref="adddeveloper"
+            value = "Add Developer" />
+
+    <!-- Table -->
+    <table class="table table-striped"	ng-init="getAllData()">
+    <thead>
+        <col>
+        <colgroup span="2"></colgroup>
+        <colgroup span="2"></colgroup>
+        <tr>
+          <td rowspan="2">  S.No. </td>
+          <th colspan="2" scope="colgroup">Employee-Type</th>
+          <th colspan="4" scope="colgroup">Basic Details</th>
+          <th colspan="3" scope="colgroup">Address</th>
+          <th colspan="2" scope="colgroup">Phone</th>
+          <th colspan="1" scope="colgroup">Department</th>
+          <th colspan="2" scope="colgroup">Options</th>
+        </tr>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Team</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Middle Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">City</th>
+          <th scope="col">Country</th>
+          <th scope="col">Province</th>
+          <th scope="col">Number</th>
+          <th scope="col">Type</th>
+          <th scope="col">Name</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </col>
+    </thead>
+    <tbody>
+      <tr ng-repeat = "developer in developers track by $index">
+        <th>{{$index + 1}}</th>
+        <td>{{developer.id}}</td>
+        <td>{{developer.team}}</td>
+        <td>{{developer.details.fname}}</td>
+        <td>{{developer.details.mname}}</td>
+        <td>{{developer.details.lname}}</td>
+        <td>{{developer.details.email}}</td>
+        <td>{{developer.address.city}}</td>
+        <td>{{developer.address.country}}</td>
+        <td>{{developer.address.province}}</td>
+        <td>{{developer.phone.number}}</td>
+        <td>{{developer.phone.type}}</td>
+        <td>{{developer.department.name}}</td>
+        <td>
+            <input type="button" class="btn btn-success" ng-click="getDataById(developer.id)" ui-sref="editdeveloper"
+               value = "Edit" />
+        </td>
+        <td>
+            <input type="button" class="btn btn-danger" ng-click = "deleteDeveloper(developer.id)" data-dismiss="modal"
+              data-toggle="modal" data-target="#deletemodal" value= "Delete" />
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+
+  <!-- Delete Modal -->
+  <div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="deletemodal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="deletemodal">Are you sure?</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <strong style="color  : red ; ">
+                You are going to delete...
+              </strong>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger " ng-click = "deleteDeveloper(developer.id)" data-dismiss="modal">Yes</button>
+              <button type="button" class="btn btn-info " data-dismiss="modal">No</button>
+            </div>
+          </div>
+        </div>      
+  </div>
+</div>

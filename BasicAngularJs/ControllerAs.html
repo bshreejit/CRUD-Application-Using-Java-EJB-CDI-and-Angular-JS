@@ -1,0 +1,11 @@
+<html>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script type="text/javascript" src= controller.js></script>
+    <body ng-app="app">
+        <div ng-component= "CustomerController as vm">
+            {{vm.name}}
+            <input ng-model="vm.id" >
+            {{vm.id}}
+        </div>
+    </body>
+</html>

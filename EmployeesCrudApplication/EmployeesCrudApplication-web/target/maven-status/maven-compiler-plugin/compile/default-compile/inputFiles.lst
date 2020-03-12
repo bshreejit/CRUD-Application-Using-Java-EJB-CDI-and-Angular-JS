@@ -1,0 +1,11 @@
+/home/shreejit/EmployeesCrudApplication/EmployeesCrudApplication-web/src/main/java/com/f1soft/crud/resource/UserAuthentication.java
+/home/shreejit/EmployeesCrudApplication/EmployeesCrudApplication-web/src/main/java/com/f1soft/crud/resource/ApiAccessResource.java
+/home/shreejit/EmployeesCrudApplication/EmployeesCrudApplication-web/src/main/java/com/f1soft/crud/resource/GenericResource.java
+/home/shreejit/EmployeesCrudApplication/EmployeesCrudApplication-web/src/main/java/com/f1soft/crud/exceptionmappers/GeneralExceptionMappers.java
+/home/shreejit/EmployeesCrudApplication/EmployeesCrudApplication-web/src/main/java/com/f1soft/crud/resource/DeveloperResource.java
+/home/shreejit/EmployeesCrudApplication/EmployeesCrudApplication-web/src/main/java/com/f1soft/crud/filters/CorsFilter.java
+/home/shreejit/EmployeesCrudApplication/EmployeesCrudApplication-web/src/main/java/com/f1soft/crud/exceptionmappers/NotFoundExceptionMapper.java
+/home/shreejit/EmployeesCrudApplication/EmployeesCrudApplication-web/src/main/java/com/f1soft/crud/resource/UserLoginResource.java
+/home/shreejit/EmployeesCrudApplication/EmployeesCrudApplication-web/src/main/java/com/f1soft/crud/filters/ResourceAccessFilter.java
+/home/shreejit/EmployeesCrudApplication/EmployeesCrudApplication-web/src/main/java/com/f1soft/crud/resource/ManagerResource.java
+/home/shreejit/EmployeesCrudApplication/EmployeesCrudApplication-web/src/main/java/com/f1soft/crud/resource/ApplicationConfig.java
